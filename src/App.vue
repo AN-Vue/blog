@@ -32,7 +32,7 @@
   <div class="custom-row">
     <div class="col-4">
       <PassDataToChildComponent class="com-separator" name="Arjun"
-        :user="user" :getData="getData"
+        :user="user" :getData="getDataFunc"
       />
     </div>
     <div class="col-4">
@@ -120,6 +120,13 @@
           <button>Sign up </button>
         </template>
       </Slots>
+
+      <Slots>
+        <template #default="{ user }">
+          <p>User Name: {{ user.name }}</p>
+          <p>User Email: {{ user.email }}</p>
+        </template>
+      </Slots>
     </div>
   </div>
 
@@ -201,8 +208,8 @@ export default {
     }
   },
   methods: {
-    getData() {
-      console.log("getData() from app component")
+    getDataFunc() {
+      console.log("getDataFunc() from app component")
     }
   }
 

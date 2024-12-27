@@ -17,16 +17,29 @@
                 <a href="#">link to website</a>
             </slot>
         </div>
+
+        <div class="scoped-slot">
+            <div>
+                <slot :user="userData"></slot>
+            </div>
+        </div>
     </div>
-    </template>
+</template>
     
-    <script>
+<script>
     export default {
         name: 'Slots',
+        data() {
+            return {
+                userData: {
+                    name: 'John Doe',
+                    email: 'john@example.com'   
+                }
+            }
+        }
     }
-    </script>
+</script>
     
-    <style>
-    
-    </style>
-    
+<style>
+
+</style>
