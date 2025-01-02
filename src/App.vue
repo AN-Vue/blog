@@ -143,6 +143,14 @@
     </div>
   </div>
 
+  <div class="custom-row">
+    <div class="modal-root"></div> <!-- Global target for teleport -->
+  </div>
+  
+  <Teleport to=".modal-root">
+    <TeleportExample/> <!-- teleport component is being teleported on the div defined with id="modal-report -->
+  </Teleport>
+  
   <Teleport to="#footer">
     <Footer/> 
   </Teleport>
@@ -171,6 +179,7 @@ import DynamicComponent from './components/DynamicComponents.vue'
 import Footer from './components/Footer/Footer.vue'
 import LifeCycle from './components/lifecycle/LifeCycle.vue'
 import Practice from './components/Practice.vue'
+import TeleportExample from "./components/TeleportExample.vue";
 
 export default {
   name: 'App',
@@ -196,6 +205,7 @@ export default {
     Slots,
     DynamicComponent,
     LifeCycle,
+    TeleportExample,
     Footer
   },
   data() {
